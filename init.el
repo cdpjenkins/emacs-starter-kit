@@ -65,6 +65,42 @@
 (regen-autoloads)
 (load custom-file 'noerror)
 
+;; Stuff added by Chris
+; clojure-mode
+(add-to-list 'load-path "~/opt/clojure-mode")
+(require 'clojure-mode)
+
+; Make menus work
+(menu-bar-mode 1)
+
+; allow selection deletion
+(delete-selection-mode t)
+
+; More sensible scrolling stuff
+(setq scroll-step 1)
+
+; Python Mode
+;(load “~/.emacs.d/python-mode.el”)
+;;python
+;(setq auto-mode-alist (cons ‘(“\\.py$” . python-mode) auto-mode-alist))
+;
+;
+;
+;; (setq interpreter-mode-alist (cons ‘(“python” . python-mode)
+;;                                     interpreter-mode-alist))
+;; (autoload ‘python-mode “python-mode” “Python editing mode.” t)
+
+;; (global-font-lock-mode t)
+;; (font-lock-mode +1)
+
+;; this is the bit that ye might want to uncomment at some point
+;(autoload 'python-mode "python-mode" "Python Mode." t)
+;(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+;(add-to-list 'interpreter-mode-alist '("python" . python-mode))
+
+(require 'highlight-indentation)
+;; End Chris stuff
+
 ;; You can keep system- or user-specific customizations here
 (setq system-specific-config (concat dotfiles-dir system-name ".el")
       user-specific-config (concat dotfiles-dir user-login-name ".el")
